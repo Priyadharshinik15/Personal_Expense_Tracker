@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<head>
+  <title>
+    Personal_Expense_Tracker
+  </title>
+  <link rel="icon" href="download.png"></link>
+  <link rel="stylesheet" href="style.css"></link>
+</head>
+<body>
+  <center>
+    <h1>
+      EXPENSE DETAILS📝 
+    </h1>
+  </center>
+  <div>
+  <table><center>
+    <tr>
+      <td class="td">User Name:</td>
+      <td id="username"></td>
+  </tr>
+
+  <tr>
+    <td class="td">
+      Expense Description:
+    </td>
+    <td id="title"></td>
+  </tr>
+  <tr>
+    <td class="td">
+      Amount spent:
+    </td>
+    <td id="amount">Rs.</td>
+  </tr>
+  <tr>
+    <td class="td">
+      Total amount:
+    </td>
+    <td id="totalamount"></td>
+  </tr>
+  <tr>
+    <td class="td">
+      Balance amount:
+    </td>
+    <td id="Balance"></td>
+  </tr>
+  <tr>
+    <td class="td">Date:</td>
+    <td id="date">    </td>
+  </tr>
+  </table>
+</center>
+</body>
+</div>
+</html>
+<script>
+  const username=document.getElementById("username")
+  const title=document.getElementById("title")
+  const amount=document.getElementById("amount")
+  const date=document.getElementById("date")
+  const total=document.getElementById("totalamount")
+  const balance=document.getElementById("Balance")
+  let name=JSON.parse(localStorage.getItem('username'))
+  username.textContent=name
+  let t=JSON.parse(localStorage.getItem('title'))
+  let a=JSON.parse(localStorage.getItem('amount'))
+  let d=new Date(JSON.parse(localStorage.getItem('date')))
+  let ta=JSON.parse(localStorage.getItem('total'))
+  let bal=JSON.parse(localStorage.getItem('balance'))
+  console.log(bal)
+  title.textContent=t
+  amount.textContent="Rs."+a
+  total.textContent="Rs."+ta
+  balance.textContent="Rs."+bal
+  date.innerHTML=d.getDate()+"-"+d.getMonth()+1+"-"+d.getFullYear()+`<br>`+d.getHours()+":"+d.getMinutes()
+  console.log(t)
+  console.log(d)
+</script>
